@@ -66,6 +66,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           files: |
-            ./build/ubuntu/build-ubuntu.zip
-            ./build/windows/build-windows.zip
-            ./build/macos/build-macos.zip
+            ./build/ubuntu/nanokvm-usb-desktop-*.zip
+            ./build/windows/nanokvm-usb-desktop-*.zip
+            ./build/macos/nanokvm-usb-desktop-*.zip
