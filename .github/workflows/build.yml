@@ -28,9 +28,9 @@ jobs:
     - name: Build and package app
       run: npm run make
 
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v4
+    - name: "Release"
+      uses: ncipollo/release-action@v1
       with:
-        name: ${{ matrix.os }}-builds
-        path: |
-          dist/*.zip
+        artifacts: "dist/*.zip"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
