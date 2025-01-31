@@ -1,0 +1,40 @@
+{
+  "name": "nanokvm-usb-desktop",
+  "version": "1.0.0",
+  "description": "A desktop app for Sipeed's NanoKVM-USB",
+  "main": "main.js",
+  "scripts": {
+    "fetch": "sh scripts/fetch.sh",
+    "cleanup": "sh scripts/cleanup.sh",
+    "start": "npm run fetch && electron-forge start",
+    "make": "npm run fetch && electron-forge make && npm run cleanup"
+  },
+  "build": {
+    "appId": "com.github.rtfmkiesel.nanokvm-usb-desktop"
+  },
+  "config": {
+    "forge": {
+      "buildIdentifier": "com.github.rtfmkiesel.nanokvm-usb-desktop",
+      "packagerConfig":{
+        "icon": "images/icon"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "win32",
+            "linux",
+            "darwin"
+          ]
+        }
+      ]
+    }
+  },
+  "author": "github.com/rtfmkiesel",
+  "license": "Unlicense",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.6.1",
+    "@electron-forge/maker-zip": "^7.6.1",
+    "electron": "^34.0.1"
+  }
+}
